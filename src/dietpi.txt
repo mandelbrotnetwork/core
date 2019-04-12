@@ -71,6 +71,7 @@ AUTO_SETUP_INSTALL_SOFTWARE_ID=73  # fail2ban
 AUTO_SETUP_INSTALL_SOFTWARE_ID=130 # python
 AUTO_SETUP_INSTALL_SOFTWARE_ID=162 # docker
 AUTO_SETUP_INSTALL_SOFTWARE_ID=9   # node.js
+AUTO_SETUP_INSTALL_SOFTWARE_ID=60   # wifi hotspot
 
 #    DietPi-Software Choice System
 #    SSH Server Selection:
@@ -128,7 +129,7 @@ AUTO_SETUP_CUSTOM_SCRIPT_EXEC=1
 
 #Disable HDMI (and GPU/VPU where supported) output for supported devices:
 #	RPi | Odroid C1 | Odroid C2
-AUTO_SETUP_HEADLESS=1
+AUTO_SETUP_HEADLESS=0
 
 #------------------------------------------------------------------------------------------------------
 # D I E T - P I
@@ -179,7 +180,7 @@ CONFIG_NTP_MODE=2
 CONFIG_WIFI_COUNTRY_CODE=US
 
 #Serial Console: Set to 0 if you do not require serial console.
-CONFIG_SERIAL_CONSOLE_ENABLE=1
+CONFIG_SERIAL_CONSOLE_ENABLE=0
 
 #Soundcard
 CONFIG_SOUNDCARD=none
@@ -232,9 +233,9 @@ SOFTWARE_OWNCLOUD_DATADIR=/mnt/dietpi_userdata/owncloud_data
 SOFTWARE_NEXTCLOUD_DATADIR=/mnt/dietpi_userdata/nextcloud_data
 
 #Wifi Hotspot
-SOFTWARE_WIFI_HOTSPOT_SSID=DietPi-HotSpot
+SOFTWARE_WIFI_HOTSPOT_SSID=Mandelbrot-HotSpot
 #    minimum of 8 characters
-SOFTWARE_WIFI_HOTSPOT_KEY=dietpihotspot
+SOFTWARE_WIFI_HOTSPOT_KEY=mandelbrot
 SOFTWARE_WIFI_HOTSPOT_CHANNEL=3
 
 #Xorg options
