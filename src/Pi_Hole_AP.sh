@@ -1,5 +1,9 @@
 #1/bin/bash
 
+. /DietPi/dietpi/func/dietpi-globals
+G_PROGRAM_NAME='Mandelbrot-Pi-Hole-AP'
+G_INIT
+
 wget http://install.pi-hole.net -O install.sh
 chmod +x install.sh
 
@@ -13,7 +17,7 @@ IPV6_ADDRESS=
 PIHOLE_DNS_1=1.1.1.1
 PIHOLE_DNS_2=1.0.0.1
 QUERY_LOGGING=true
-INSTALL_WEB_SERVER=false
+INSTALL_WEB_SERVER=true
 INSTALL_WEB_INTERFACE=true
 LIGHTTPD_ENABLED=true
 WEBPASSWORD=0a935d8a09c4ff3e68e9012565b267510397eca2dd9447110b19d7bb61529789
@@ -45,12 +49,14 @@ pihole -a -p $(sudo openssl enc -d -a -md sha256 -aes-256-cbc $pbkdf2 -salt -pas
 
 sed -i "s/domain-name-servers.*/domain-name-servers\ 192.168.42.1;/" /etc/dhcp/dhcpd.conf 
 echo "addn-hosts=/etc/pihole/lan.list" | tee -a /etc/dnsmasq.d/02-lan.conf
-echo 'mandelbrot.local 192.168.42.1' | tee -a /etc/pihole/lan.list
+echo '192.168.42.1 mandelbrot.local' | tee -a /etc/pihole/lan.list
 
-G_CONFIG_INJECT 's/aSOFTWARE_INSTALL_STATE[93]=0/aSOFTWARE_INSTALL_STATE[93]=2/g' /DietPi/dietpi/.installed
+sed -i 's/aSOFTWARE_INSTALL_STATE[93]=0/aSOFTWARE_INSTALL_STATE[93]=2/g' /DietPi/dietpi/.installed
 
 # enable access point
-sudo systemctl unmask hostapd
-sudo systemctl enable hostapd
+systemctl unmask hostapd
+systemctl enable hostapd
+
+dietpi-software install 84
 
 popd

@@ -1,8 +1,8 @@
 #!/bin/bash
 
 
-# install pi-hole
-./Pi_Hole_Unattended.sh
+# install and configure PI hole to work with AP
+/boot/Pi_Hole_AP.sh
 
 usermod -l benoit dietpi
 usermod -d /home/benoit -m benoit

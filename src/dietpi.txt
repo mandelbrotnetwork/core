@@ -72,7 +72,6 @@ AUTO_SETUP_INSTALL_SOFTWARE_ID=130 # python
 AUTO_SETUP_INSTALL_SOFTWARE_ID=162 # docker
 AUTO_SETUP_INSTALL_SOFTWARE_ID=9   # node.js
 AUTO_SETUP_INSTALL_SOFTWARE_ID=60  # wifi hotspot
-AUTO_SETUP_INSTALL_SOFTWARE_ID=93  # pi-hole
 
 #    DietPi-Software Choice System
 #    SSH Server Selection:

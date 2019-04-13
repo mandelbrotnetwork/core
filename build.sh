@@ -10,9 +10,7 @@ echo "unzip dietpi archive"
 echo "mount image"
 hdiutil mount DietPi_RPi-ARMv6-Stretch.img
 
-cp -f ../src/dietpi.txt /Volumes/boot/dietpi.txt
-cp -f ../src/Automation_Custom_Script.sh /Volumes/boot/Automation_Custom_Script.sh
-cp -f ../src/Benoit_Setup.sh /Volumes/boot/Benoit_Setup.sh
+cp -f -R ../src/ /Volumes/boot/
 
 hdiutil unmount /Volumes/boot
 
