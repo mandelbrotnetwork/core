@@ -38,7 +38,7 @@ AUTO_SETUP_NET_ETH_FORCE_SPEED=0
 
 #    Size of swapfile to generate (MB)
 #        0=Disabled | 1=auto (2GB-RAM = size) | 2+=manual
-AUTO_SETUP_SWAPFILE_SIZE=1
+AUTO_SETUP_SWAPFILE_SIZE=4096
 #        Optional swapfile location
 AUTO_SETUP_SWAPFILE_LOCATION=/var/swap
 
@@ -71,7 +71,8 @@ AUTO_SETUP_INSTALL_SOFTWARE_ID=73  # fail2ban
 AUTO_SETUP_INSTALL_SOFTWARE_ID=130 # python
 AUTO_SETUP_INSTALL_SOFTWARE_ID=162 # docker
 AUTO_SETUP_INSTALL_SOFTWARE_ID=9   # node.js
-AUTO_SETUP_INSTALL_SOFTWARE_ID=60   # wifi hotspot
+AUTO_SETUP_INSTALL_SOFTWARE_ID=60  # wifi hotspot
+AUTO_SETUP_INSTALL_SOFTWARE_ID=93  # pi-hole
 
 #    DietPi-Software Choice System
 #    SSH Server Selection:
