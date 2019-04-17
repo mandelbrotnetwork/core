@@ -1,5 +1,4 @@
 #!/bin/bash
-cp /proc/sys/kernel/random/uuid uuid
 
 echo "deb http://ppa.launchpad.net/ansible/ansible/ubuntu trusty main"
 apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 93C4A3FD7BB9C367
@@ -24,7 +23,7 @@ cd /home/mantle
 cat >> setup.sh << EOF
 #!/bin/bash
 
-ansible-pull -U https://github.com/mandelbrotnetwork/mantle.git
+ansible-pull -U https://github.com/mandelbrotnetwork/mantle.git --checkout __BRANCH__
 
 EOF
 

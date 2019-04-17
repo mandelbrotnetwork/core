@@ -12,6 +12,12 @@ hdiutil mount DietPi_RPi-ARMv6-Stretch.img
 
 cp -f -R ../src/ /Volumes/boot/
 
+OWNER=$( git config --get remote.origin.url | cut -f2 -d':' | cut -f1 -d'/' )
+BRANCH=$( git branch | grep \* | cut -d ' ' -f2 )
+
+sed "s/__BRANCH__/$BRANCH/g" Volumes/boot/dietpi.txt
+sed "s/__OWNER__/$OWNER/g" Volumes/boot/dietpi.txt
+
 hdiutil unmount /Volumes/boot
 
 cp -f DietPi_RPi-ARMv6-Stretch.img ../dist/mandelbrot.img
