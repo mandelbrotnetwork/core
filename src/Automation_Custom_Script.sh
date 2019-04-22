@@ -23,7 +23,7 @@ cd /home/mantle
 cat >> setup.sh << EOF
 #!/bin/bash
 
-ansible-pull -U https://github.com/mandelbrotnetwork/mantle.git --checkout __BRANCH__
+ansible-pull -U https://github.com/__OWNER__/mantle.git --checkout __BRANCH__
 
 EOF
 

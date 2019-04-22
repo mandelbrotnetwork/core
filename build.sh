@@ -15,8 +15,8 @@ cp -f -R ../src/ /Volumes/boot/
 OWNER=$( git config --get remote.origin.url | cut -f2 -d':' | cut -f1 -d'/' )
 BRANCH=$( git branch | grep \* | cut -d ' ' -f2 )
 
-sed "s/__BRANCH__/$BRANCH/g" Volumes/boot/dietpi.txt
-sed "s/__OWNER__/$OWNER/g" Volumes/boot/dietpi.txt
+sed -ie "s/__BRANCH__/$BRANCH/g" /Volumes/boot/Automation_Custom_Script.sh
+sed -ie "s/__OWNER__/$OWNER/g" /Volumes/boot/Automation_Custom_Script.sh
 
 hdiutil unmount /Volumes/boot
 
