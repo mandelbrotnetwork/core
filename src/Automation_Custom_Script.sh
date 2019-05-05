@@ -1,6 +1,6 @@
 #!/bin/bash
 
-echo "deb http://ppa.launchpad.net/ansible/ansible/ubuntu trusty main"
+echo "deb http://ppa.launchpad.net/ansible/ansible/ubuntu trusty main" >> /etc/apt/sources.list
 apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 93C4A3FD7BB9C367
 apt-get update
 apt-get upgrade -y
@@ -20,11 +20,78 @@ echo 'mantle ALL=(ALL) NOPASSWD:ALL' | sudo EDITOR='tee -a' visudo
 
 cd /home/mantle
 
+cat >> .ssh/id_deploy << EOF
+-----BEGIN RSA PRIVATE KEY-----
+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
+-----END RSA PRIVATE KEY-----
+EOF
+
+chmod 600 ./.ssh/id_deploy
+
+cat >> ./.ssh/id_deploy.pub << EOF
+ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDBdQsUUYFLA63abLHM6yT+j1ble734jE6zqYsH8Vvt5Rsn4sqdOfs9MJpY/Wh0leQlsRywVVgyTpeg6/dkhVXKWu8J9FcKK6baz4wsraJIhYs0lBSJQ4icAHtKxmCYYXlx/hZn7i029UEXv59QgmMndiUkOCDV7vMbnlxcHd1kI/UQZMQCfmWif9q8tyN2+zLk741JifVfuo59kEyt9dvp+9iOEvLCd0ICFErcTIZ2tIDYODdXyZfy6uX6hAj2Xypd52R2PWjBoTa27LgbO9aCPGPk4T+/EChlsSE0VXrUx6bKZE3X9I3HItc1EaTHx74Rh2/3PBEsAF9i2NlKONz90Hukf0IEbrMKnJ6sSF3wMxd3exg5085Xfcp5l3bEXqGw1NMbsW3+SDNtC/mYi3Wit6IuU80PiTH9C+NaicqM4CUt1WqLtL2OyRTGJWaXWGP0TzkO9II+xMHELH0Sex2j+qT3DKBitBHUk2hLrkCi8DgRqSmAMGpu1vKulsPTPXbdmxsygNcDtx7O8pA2TsxinRLXRQ5kEKmdw5MR5sU5OwTXbqQvCC/kyDAN4RIZzfqPSbTmw0vVUQQ27HcSKArn+NSH8VHJCW956/T7h6nhRDFQyZKxGwkyeu+jMqxys1qYusN2IV2ocfyHacJCzmxN5yF5Cs19s5wMhYBI6UcpOQ== core@mandelbrot.dev
+EOF
+
+cat >> ./.ssh/config << EOF
+IdentityFile ~/.ssh/id_deploy
+EOF
+
+chmod 600 ./.ssh/config
+
+sudo service sshd restart
+
 cat >> setup.sh << EOF
 #!/bin/bash
 
-ansible-pull -U https://github.com/__OWNER__/mantle.git --checkout __BRANCH__
-
+ansible-pull -U https://github.com/__OWNER__/mantle.git --checkout __BRANCH__ --accept-host-key
 EOF
 
 systemctl unmask hostapd

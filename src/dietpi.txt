@@ -67,16 +67,21 @@ AUTO_SETUP_GLOBAL_PASSWORD=mandelbrot
 #    - Examples:
 AUTO_SETUP_INSTALL_SOFTWARE_ID=16  # build-essential
 AUTO_SETUP_INSTALL_SOFTWARE_ID=17  # git
-#AUTO_SETUP_INSTALL_SOFTWARE_ID=73  # fail2ban
+AUTO_SETUP_INSTALL_SOFTWARE_ID=73  # fail2ban
 AUTO_SETUP_INSTALL_SOFTWARE_ID=130 # python
-#AUTO_SETUP_INSTALL_SOFTWARE_ID=162 # docker
+AUTO_SETUP_INSTALL_SOFTWARE_ID=162 # docker
 AUTO_SETUP_INSTALL_SOFTWARE_ID=60  # wifi hotspot
+AUTO_SETUP_INSTALL_SOFTWARE_ID=114 # Nextcloud
+AUTO_SETUP_INSTALL_SOFTWARE_ID=23  # lxdef
+AUTO_SETUP_INSTALL_SOFTWARE_ID=29 #xrdp: remote desktop protocol (rdp) server +desktop | http://dietpi.com/phpbb/viewtopic.php?f=8&t=5&start=70#p2074
+AUTO_SETUP_INSTALL_SOFTWARE_ID=30 #nomachine: m
+AUTO_SETUP_INSTALL_SOFTWARE_ID=120 #realvnc server: desktop for remote connection +desktop | http://dietpi.com/phpbb/viewtopic.php?f=8&t=5&p=4149#p4149
 
 #    DietPi-Software Choice System
 #    SSH Server Selection:
 #        0=none
 #        -1=dropbear
-#        -2=opensshserver
+#        -2=opensshserverfboo
 AUTO_SETUP_SSH_SERVER_INDEX=-2
 
 #    File Server Selection:
@@ -104,7 +109,7 @@ AUTO_SETUP_WEB_SERVER_INDEX=-2
 #    DietPi-Autostart | Requires AUTO_SETUP_AUTOMATED=1
 #    After installation is completed, which program should the system boot to?
 #        0=Console 7=Console+auto root login | 1=Kodi 2=Desktops (LXDE/MATE etc) 5=DietPi-Cloudshell 6=Uae4ARM (Fastboot) 8=Uae4ARM (sandard boot) 9=dxx-rebirth
-AUTO_SETUP_AUTOSTART_TARGET_INDEX=0
+AUTO_SETUP_AUTOSTART_TARGET_INDEX=2
 
 #    Language/Regional settings | Requires AUTO_SETUP_AUTOMATED=1
 #        Timezone eg: Europe/London America/New_York | Full list (TZ*): https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
@@ -123,7 +128,7 @@ AUTO_SETUP_KEYBOARD_LAYOUT=us
 #        Option 1 = Copy your script to /boot/Automation_Custom_Script.sh and it will be executed automatically.
 #        Option 2 = Host your script online, then use AUTO_SETUP_CUSTOM_SCRIPT_EXEC=http://myweb.com/myscript.sh , it will be downloaded and executed automatically. | 0=disabled
 #        NB: Executed script log /var/tmp/dietpi/logs/dietpi-automation_custom_script.log
-AUTO_SETUP_CUSTOM_SCRIPT_EXEC=1
+AUTO_SETUP_CUSTOM_SCRIPT_EXEC=0
 
 #Disable HDMI (and GPU/VPU where supported) output for supported devices:
 #	RPi | Odroid C1 | Odroid C2
